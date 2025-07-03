@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exeter Sustainable Investment Society</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1e5f32;
+            border-bottom: 2px solid #1e5f32;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('YOUR_BUSINESS_SCHOOL_IMAGE_URL_HERE');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero.show-for-about-only {
+            display: none;
+        }
+
+        .hero.show-for-about-only.active {
+            display: flex;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+            min-height: 100vh;
+            padding: 120px 0 80px;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .page-section#about {
+            padding: 80px 0 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+
+        .content-block h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Research Grid */
+        .research-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .research-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .research-card h4 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .research-card p {
+            color: #666;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .research-content {
+            min-height: 300px;
+            background: white;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .team-row.founders {
+            justify-content: space-evenly;
+        }
+
+        .team-row.executives {
+            justify-content: center;
+        }
+
+        .team-member {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #666;
+        }
+
+        .team-member h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Careers Support */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .career-link {
+            background: #1e5f32;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .career-link:hover {
+            background: #164426;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 95, 50, 0.3);
+        }
+
+        .career-link.rougemont:hover {
+            background: #1a2f3a;
+            box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+        }
+
+        .career-link h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .career-link p {
+            opacity: 0.9;
+        }
+
+        /* Partnership sections */
+        .partnership-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .partnership-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .partnership-section ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .partnership-section li {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .footer-section p {
+            color: #bdc3c7;
+            margin: 0.5rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Exeter Sustainable Investment Society</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('about')" class="active">About</a></li>
+                <li><a href="#" onclick="showSection('research')">Research & Insights</a></li>
+                <li><a href="#" onclick="showSection('team')">Our Team & Join</a></li>
+                <li><a href="#" onclick="showSection('careers')">Careers Support & Events</a></li>
+                <li><a href="#" onclick="showSection('partnerships')">Partnerships</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero show-for-about-only" id="hero">
+        <div class="container">
+            <h1>Exeter Sustainable Finance Society</h1>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="page-section active">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>About Us</h3>
+                </div>
+                <div class="content-block">
+                    <p>The Exeter Sustainable Investment Society bridges academic theory with practical experience in sustainable finance. We empower students to develop financial expertise while our community provides comprehensive professional development and career support. We're committed to fostering the talent at Exeter into the next generation of professionals to drive positive environmental and social impact through their careers.</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Charitable Focus</h3>
+                </div>
+                <div class="content-block">
+                    <p>As a non-profit organisation, we give back by donating a percentage of our profits to charities selected by our members.</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Rougemont Capital</h3>
+                </div>
+                <div class="content-block">
+                    <p>The society has an adjacent sustainable investment fund, 'Rougemont Capital', which offers students invaluable exposure to investing in the real market. The fund is structured with Analysts, Sector Heads, an Investment Committee, and an Alumni Advisory Committee and covers the following teams: Equity, Macro, Risk & Portfolio Construction and ESG. We will be recruiting for the roles of Sector Heads and Analysts. Further Information can be found in Our Team & Join</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-block">
+                    <h3>Our Focus on Research</h3>
+                </div>
+                <div class="content-block">
+                    <p>To further the understanding of capital allocation in sustainable finance, we regularly work on rigorous academic research papers based on our proprietary models. We also release white papers on key emerging industries to guide investment decisions. Our research is free to access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Insights Section -->
+    <section id="research" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research & Insights</h2>
+            </div>
+
+            <div class="research-grid">
+                <div class="research-card">
+                    <h4>Equity Research</h4>
+                    <p>In-depth analysis of sustainable companies and emerging market opportunities</p>
+                    <div class="research-content">
+                        PDF documents will be uploaded here
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <h4>Thematic Research</h4>
+                    <p>Exploring key themes driving the sustainable finance transition</p>
+                    <div class="research-content">
+                        PDF documents will be uploaded here
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <h4>Quantitative Research</h4>
+                    <p>Working on research using SVAR, LSTM and XGBoost models to uncover causal relationships and aid tactical allocation in the energy transition.</p>
+                    <div class="research-content">
+                        PDF documents will be uploaded here
+                    </div>
+                </div>
+
+                <div class="research-card">
+                    <h4>News</h4>
+                    <p>Latest insights and updates from the sustainable finance world</p>
+                    <div class="research-content">
+                        PDF documents will be uploaded here
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team & Join Section -->
+    <section id="team" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Team & Join</h2>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-row founders">
+                    <div class="team-member">
+                        <div class="team-photo">OB</div>
+                        <h4>Oskar Billett</h4>
+                        <p>Founder & President</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">VB</div>
+                        <h4>Valentino Bianco</h4>
+                        <p>Founder & Treasurer</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">FP</div>
+                        <h4>Flynn Presence</h4>
+                        <p>Founder</p>
+                    </div>
+                </div>
+
+                <div class="team-row executives">
+                    <div class="team-member">
+                        <div class="team-photo">EH</div>
+                        <h4>Ethan Hammond</h4>
+                        <p>Vice-President</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo">ER</div>
+                        <h4>Ella Reilly</h4>
+                        <p>Head of Outreach</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3>Join Our Society</h3>
+                <p style="margin-top: 1rem; font-size: 1.1rem;">Applications are open for motivated students passionate about sustainable finance.</p>
+                <a href="#" class="career-link" style="display: inline-block; margin-top: 2rem; max-width: 300px;">
+                    <h4>Apply Now</h4>
+                    <p>Submit your application to join our team</p>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3>Rougemont Capital</h3>
+                <p style="margin-top: 1rem; font-size: 1.1rem;">Interested in real market investment experience? Join our adjacent investment fund.</p>
+                <a href="https://rougemontcapital.co.uk" target="_blank" class="career-link rougemont" style="display: inline-block; margin-top: 2rem; max-width: 300px; background: #2c3e50;">
+                    <h4>Learn More</h4>
+                    <p>Visit Rougemont Capital website</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Support & Events Section -->
+    <section id="careers" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Careers Support & Events</h2>
+            </div>
+
+            <div class="careers-grid">
+                <a href="#" class="career-link">
+                    <h4>CV Check</h4>
+                    <p>Submit your CV for professional review and feedback</p>
+                </a>
+
+                <a href="#" class="career-link">
+                    <h4>Trackers</h4>
+                    <p>Access Trackr and Bright Network for opportunities</p>
+                </a>
+
+                <a href="#" class="career-link">
+                    <h4>Application Information</h4>
+                    <p>Comprehensive guides and resources via Notion and Google Docs</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section id="partnerships" class="page-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Partnerships</h2>
+            </div>
+
+            <div class="partnership-section">
+                <h3>Connect With Exeter's Talent</h3>
+                <p>The Exeter Sustainable Finance Society provides a unique opportunity for firms to enhance brand visibility, support a meaningful cause and connect directly with highly motivated students who are actively pursuing careers in finance. This can include, but is not limited to, Asset Management, Investment Research, Investment Banking, Private Equity, and Venture Capital.</p>
+                
+                <p>Our society attracts students from diverse academic backgrounds who are committed to developing the technical and professional skills necessary to break into the industry. Through regular training, events, and talks, we foster a pipeline of students who are well-prepared and genuinely passionate about the field.</p>
+                
+                <p>Whether you are looking to host a speaker event, run targeted recruitment workshops, or establish long-term brand recognition at the university, we would love to collaborate.</p>
+            </div>
+
+            <div class="partnership-section">
+                <h3>Why Partner With Us?</h3>
+                <p>Working with us allows your firm to:</p>
+                <ul>
+                    <li>Engage directly with highly motivated and high-potential students at the University of Exeter</li>
+                    <li>Support the meaningful goals of the society</li>
+                    <li>Further financial education through events such as speaker sessions, technical workshops, or recruitment panels</li>
+                    <li>Share opportunities via our newsletter and internal channels</li>
+                    <li>Build brand visibility through our various social media outlets and website</li>
+                    <li>Support key initiatives, including our fireside chats (which can be operated virtually) and Investment Competition</li>
+                    <li>Promote diversity and inclusion through tailored events and outreach</li>
+                </ul>
+                <p>Sponsorship can be tailored to meet your firm's specific needs. We are happy to work together and offer bespoke packages with a wide range of benefits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Exeter Sustainable Investment Society</h4>
+                    <p>University of Exeter Business School</p>
+                    <p>Exeter, United Kingdom</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>contact@exetersustainableinvestment.com</p>
+                    <p>Follow us on social media for updates</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Handle hero section - only show for About page
+            const hero = document.getElementById('hero');
+            if (sectionId === 'about') {
+                hero.classList.add('active');
+            } else {
+                hero.classList.remove('active');
+            }
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show About section and hero by default
+            document.getElementById('about').classList.add('active');
+            document.getElementById('hero').classList.add('active');
+            
+            // Hero click handler
+            const hero = document.querySelector('.hero');
+            hero.addEventListener('click', function() {
+                showSection('about');
+                document.querySelector('.nav-links a').classList.remove('active');
+                document.querySelector('.nav-links a[onclick*="about"]').classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
