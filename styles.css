@@ -118,38 +118,66 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
+    min-height: 500px;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    position: relative;
+}
+
+/* Fix for mobile devices - disable fixed attachment on mobile */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        height: 70vh;
+        min-height: 400px;
+    }
 }
 
 .hero.hero-about {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .hero.hero-research {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .hero.hero-team {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .hero.hero-events {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2012&q=80');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .hero.hero-partnerships {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .hero h1 {
