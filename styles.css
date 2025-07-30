@@ -131,6 +131,12 @@ nav {
     position: relative;
 }
 
+/* Banner-style hero for specific pages */
+.hero.hero-banner {
+    height: 40vh;
+    min-height: 300px;
+}
+
 /* Fix for mobile devices - disable fixed attachment on mobile */
 @media (max-width: 768px) {
     .hero {
@@ -138,8 +144,14 @@ nav {
         height: 70vh;
         min-height: 400px;
     }
+    
+    .hero.hero-banner {
+        height: 30vh;
+        min-height: 250px;
+    }
 }
 
+/* About page hero with arrow */
 .hero.hero-about {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
@@ -148,17 +160,32 @@ nav {
     background-repeat: no-repeat;
 }
 
+.hero.hero-about::after {
+    content: '↓';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.4);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
 .hero.hero-research {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                 url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.hero.hero-team {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -186,6 +213,20 @@ nav {
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     font-family: 'Times New Roman', Times, serif;
+}
+
+.hero.hero-banner h1 {
+    font-size: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero.hero-banner h1 {
+        font-size: 2rem;
+    }
 }
 
 /* Page Sections */
@@ -340,7 +381,30 @@ nav {
     font-size: 0.9rem;
 }
 
-/* Careers Support */
+/* Team Page Join Sections - Horizontal Layout */
+.join-sections {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    align-items: flex-start;
+}
+
+.join-section {
+    flex: 1;
+    text-align: center;
+}
+
+.join-section h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.join-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
 .careers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -667,5 +731,10 @@ footer {
 
     .events-grid {
         grid-template-columns: 1fr;
+    }
+
+    .join-sections {
+        flex-direction: column;
+        gap: 2rem;
     }
 }
