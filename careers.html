@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Career support and events from the Exeter Sustainable Finance Society - CV reviews, application guidance, and networking opportunities.">
-    <meta name="keywords" content="career support, sustainable finance careers, CV review, finance events, Exeter careers">
+    <meta name="description" content="Events and career support from the Exeter Sustainable Finance Society - upcoming events, speaker series, CV reviews, and career guidance.">
+    <meta name="keywords" content="events, career support, sustainable finance careers, CV review, finance events, Exeter careers">
     <meta name="author" content="Exeter Sustainable Finance Society">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./images/logo.png">
     <link rel="shortcut icon" href="./images/logo.png">
-    <title>Careers Support & Events - Exeter Sustainable Finance Society</title>
+    <title>Events & Careers Support - Exeter Sustainable Finance Society</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,11 +20,11 @@
         <div class="nav-container">
             <div class="logo">Exeter Sustainable Finance Society</div>
             <ul class="nav-links">
-                <li><a href="index.html">About</a></li>
-                <li><a href="research.html">Research & Insights</a></li>
-                <li><a href="team.html">Our Team & Join</a></li>
-                <li><a href="careers.html" class="active">Events & Career Support</a></li>
-                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/research">Research & Insights</a></li>
+                <li><a href="/team">Our Team & Join</a></li>
+                <li><a href="/careers" class="active">Events & Careers Support</a></li>
+                <li><a href="/partnerships">Partnerships</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
@@ -33,36 +33,158 @@
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
         <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="research.html">Research & Insights</a></li>
-            <li><a href="team.html">Our Team & Join</a></li>
-            <li><a href="careers.html" class="active">Careers Support & Events</a></li>
-            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/research">Research & Insights</a></li>
+            <li><a href="/team">Our Team & Join</a></li>
+            <li><a href="/careers" class="active">Events & Careers Support</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
         </ul>
     </div>
 
-    <!-- Careers Support & Events Section -->
-    <section class="page-section no-hero active">
+    <!-- Hero Section -->
+    <section class="hero hero-events">
         <div class="container">
-            <div class="section-header">
-                <h2>Careers Support & Events</h2>
+            <h1>Events</h1>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="page-section active">
+        <div class="container">
+            
+            <!-- Upcoming Events Section -->
+            <div class="events-section">
+                <h3>Upcoming Events</h3>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        Event Image
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">February 15, 2025</div>
+                        <div class="event-title">Spring Week and Internship Applications</div>
+                        <div class="event-description">
+                            Join us for an essential talk covering everything you need to know about spring week and internship applications in sustainable finance. Our speakers will provide insights into application processes, what recruiters look for, and how to stand out in a competitive field.
+                        </div>
+                        <a href="#" class="event-button">Register</a>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        Event Image
+                    </div>
+                    <div class="event-details">
+                        <div class="event-date">March 5, 2025</div>
+                        <div class="event-title">Guest Speaker: ESG Investment Strategies</div>
+                        <div class="event-description">
+                            A special guest speaker event featuring an industry professional who will discuss current ESG investment strategies, market trends, and career opportunities in sustainable finance. This is an excellent networking opportunity for students interested in the field.
+                        </div>
+                        <a href="#" class="event-button">Register</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="careers-grid">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDofSG5jianNpIZbhC-viZbPGJmw4oY508sgfokogp6DnxQg/viewform?usp=header" class="career-link">
-                    <h4>CV Check</h4>
-                    <p>Submit your CV for professional review and feedback</p>
-                </a>
+            <!-- Past Events Section -->
+            <div class="past-events-section">
+                <h3>Past Events</h3>
+                
+                <div class="year-tabs">
+                    <button class="year-tab" onclick="showEvents('2022-2023')">2022-2023</button>
+                    <button class="year-tab" onclick="showEvents('2023-2024')">2023-2024</button>
+                    <button class="year-tab active" onclick="showEvents('2024-2025')">2024-2025</button>
+                    <button class="year-tab" onclick="showEvents('2025-2026')">2025-2026</button>
+                </div>
 
-                <a href="#" class="career-link">
-                    <h4>Trackers</h4>
-                    <p>Access Trackr and Bright Network for opportunities</p>
-                </a>
+                <div id="events-2024-2025" class="events-grid">
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            Event Poster
+                        </div>
+                        <div class="past-event-content">
+                            <div class="past-event-date">October 4, 2024</div>
+                            <div class="past-event-title">Spring Week Panel</div>
+                            <div class="past-event-description">
+                                A comprehensive panel discussion featuring industry professionals sharing insights about spring week opportunities and application strategies.
+                            </div>
+                            <a href="#" class="event-button learn-more">Learn more</a>
+                        </div>
+                    </div>
 
-                <a href="#" class="career-link">
-                    <h4>Application Information</h4>
-                    <p>Comprehensive guides and resources via Notion and Google Docs</p>
-                </a>
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            Event Poster
+                        </div>
+                        <div class="past-event-content">
+                            <div class="past-event-date">September 20, 2024</div>
+                            <div class="past-event-title">Sustainable Finance Careers Workshop</div>
+                            <div class="past-event-description">
+                                An interactive workshop covering various career paths in sustainable finance, from asset management to ESG consulting.
+                            </div>
+                            <a href="#" class="event-button learn-more">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="events-2023-2024" class="events-grid" style="display: none;">
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            Event Poster
+                        </div>
+                        <div class="past-event-content">
+                            <div class="past-event-date">March 15, 2024</div>
+                            <div class="past-event-title">Investment Banking in ESG</div>
+                            <div class="past-event-description">
+                                A deep dive into how investment banking is adapting to ESG requirements and sustainable finance principles.
+                            </div>
+                            <a href="#" class="event-button learn-more">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="events-2022-2023" class="events-grid" style="display: none;">
+                    <div class="past-event-card">
+                        <div class="past-event-image">
+                            Event Poster
+                        </div>
+                        <div class="past-event-content">
+                            <div class="past-event-date">November 10, 2022</div>
+                            <div class="past-event-title">Society Launch Event</div>
+                            <div class="past-event-description">
+                                The inaugural event of the Exeter Sustainable Finance Society, introducing our mission and vision to the university community.
+                            </div>
+                            <a href="#" class="event-button learn-more">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="events-2025-2026" class="events-grid" style="display: none;">
+                    <div style="text-align: center; padding: 2rem; color: #6c757d;">
+                        <p>Events for 2025-2026 will be announced soon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career Support Section -->
+            <div class="events-section">
+                <h3>Career Support</h3>
+                
+                <div class="careers-grid">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDofSG5jianNpIZbhC-viZbPGJmw4oY508sgfokogp6DnxQg/viewform?usp=header" class="career-link">
+                        <h4>CV Check</h4>
+                        <p>Submit your CV for professional review and feedback</p>
+                    </a>
+
+                    <a href="#" class="career-link">
+                        <h4>Trackers</h4>
+                        <p>Access Trackr and Bright Network for opportunities</p>
+                    </a>
+
+                    <a href="#" class="career-link">
+                        <h4>Application Information</h4>
+                        <p>Comprehensive guides and resources via Notion and Google Docs</p>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -86,5 +208,27 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function showEvents(year) {
+            // Hide all event grids
+            const eventGrids = document.querySelectorAll('[id^="events-"]');
+            eventGrids.forEach(grid => {
+                grid.style.display = 'none';
+            });
+            
+            // Show selected year's events
+            const selectedGrid = document.getElementById('events-' + year);
+            if (selectedGrid) {
+                selectedGrid.style.display = 'grid';
+            }
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.year-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>

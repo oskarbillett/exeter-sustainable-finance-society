@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/research",
+      "destination": "/research.html"
+    },
+    {
+      "source": "/team", 
+      "destination": "/team.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/partnerships",
+      "destination": "/partnerships.html"
+    }
+  ]
+}
