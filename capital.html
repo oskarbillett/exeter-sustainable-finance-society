@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rougemont Capital - Exeter's student-run sustainable investment fund offering real market experience and driving positive social impact through investing.">
+    <meta name="keywords" content="Rougemont Capital, sustainable investing, student investment fund, Exeter, ESG investing, impact investing">
+    <meta name="author" content="Exeter Sustainable Finance Society">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/logo.png">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <title>Rougemont Capital - Exeter Sustainable Finance Society</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .rougemont-button {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .rougemont-button:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .hero.hero-rougemont {
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('./images/rougemont-capital.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Exeter Sustainable Finance Society</div>
+            <ul class="nav-links">
+                <li><a href="/">About</a></li>
+                <li><a href="/team">Team</a></li>
+                <li><a href="/careers">Events</a></li>
+                <li><a href="/capital" class="active">Rougemont Capital</a></li>
+                <li><a href="/research">Research</a></li>
+                <li><a href="/partnerships">Partnerships</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="/">About</a></li>
+            <li><a href="/team">Team</a></li>
+            <li><a href="/careers">Events</a></li>
+            <li><a href="/research">Research</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/rougemont-capital" class="active">Rougemont Capital</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero hero-rougemont" style="height: 75vh; min-height: 400px;">
+        <div class="container">
+            <h1>Rougemont Capital</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Exeter's student-run sustainable investment fund — applying rigorous research, disciplined risk management, and institutional standards to drive positive impact.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkeqmsMUB9kzGf60zO8za4J3GghELtLGidlWPsGq6JX1AsCA/viewform?usp=dialog" class="rougemont-button">Apply Now</a>
+                <a href="#learn-more" class="rougemont-button">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fund Overview -->
+    <section class="page-section active" style="padding-top: 60px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem;">MANDATE</h4>
+                    <p style="color: #ffffff; font-size: 1.2rem; font-weight: 500;">Sustainable Equities</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem;">HORIZON</h4>
+                    <p style="color: #ffffff; font-size: 1.2rem; font-weight: 500;">1-3 years</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem;">BENCHMARK</h4>
+                    <p style="color: #ffffff; font-size: 1.2rem; font-weight: 500;">MSCI World ESG</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 0.5rem;">COVERAGE</h4>
+                    <p style="color: #ffffff; font-size: 1.2rem; font-weight: 500;">Global / Multi-sector</p>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <div id="learn-more" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 2rem; text-align: center;">Introduction to Rougemont Capital</h2>
+                <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                        Rougemont Capital is Exeter's student-run sustainable investment fund. We leverage the technical depth of the University of Exeter Business School to generate novel insights, combined with our commitment to sustainable finance principles to drive positive environmental and social impact through our investment decisions.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                        Led by sector heads, our analysts publish their top sustainable investment ideas in Rougemont Capital's research reports, culminating in our commitment to supporting companies that align with our ESG criteria and sustainable development goals.
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkeqmsMUB9kzGf60zO8za4J3GghELtLGidlWPsGq6JX1AsCA/viewform?usp=dialog" class="rougemont-button">Apply Here</a>
+                </div>
+            </div>
+
+            <!-- Investment Philosophy -->
+            <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 12px; margin-bottom: 4rem; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                <h3 style="font-size: 2rem; color: #ffffff; margin-bottom: 2rem;">Investment Philosophy</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.8);">
+                    We aim to hold long-term positions in high-quality sustainable companies over a 1-3 year horizon, seeking to generate positive returns while driving meaningful environmental and social impact. Our approach focuses on identifying companies with strong ESG fundamentals, sustainable business models, and positive impact potential across geographies, sectors, and market caps within a diversified equity portfolio.
+                </p>
+            </div>
+
+            <!-- Team Structure -->
+            <div style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 3rem; text-align: center;">Team Structure</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <!-- Equity Team -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                        <h4 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 1.5rem;">Equity Team</h4>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">Sector heads and analysts collaborate to fundamentally analyze sustainable companies across:</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                                <span style="color: #ffffff; font-weight: 500;">Clean Energy & Technology</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                                <span style="color: #ffffff; font-weight: 500;">Sustainable Healthcare</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                                <span style="color: #ffffff; font-weight: 500;">Green Infrastructure</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                                <span style="color: #ffffff; font-weight: 500;">Impact Industrials</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                                <span style="color: #ffffff; font-weight: 500;">Sustainable Transport</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                                <span style="color: #ffffff; font-weight: 500;">ESG Leaders</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Governance Structure -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                        <h4 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 1.5rem;">Governance Layers</h4>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #ffffff; font-weight: 600; margin-bottom: 0.5rem;">1. Alumni Advisory Committee</h5>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Sustainable finance professionals provide portfolio oversight and feedback on investment decisions each term.</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #ffffff; font-weight: 600; margin-bottom: 0.5rem;">2. Investment Committee</h5>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Senior students with final accountability for sustainable investment decisions and ESG criteria compliance.</p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #ffffff; font-weight: 600; margin-bottom: 0.5rem;">3. Sector Heads</h5>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Lead research process, mentor analysts, and drive coverage in sustainable sectors.</p>
+                        </div>
+                        <div>
+                            <h5 style="color: #ffffff; font-weight: 600; margin-bottom: 0.5rem;">4. Analysts</h5>
+                            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Source ideas, build sustainable investment models, and deliver ESG-focused investment pitches.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recruiting Focus -->
+                <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); text-align: center;">
+                    <h4 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1.5rem;">Recruiting Focus</h4>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        We are recruiting for <strong>Sector Heads</strong> and <strong>Analysts</strong>. Strong sustainability knowledge, clear thinking, and ownership mindset are key. Experience with ESG analysis and impact measurement is valued.
+                    </p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkeqmsMUB9kzGf60zO8za4J3GghELtLGidlWPsGq6JX1AsCA/viewform?usp=dialog" class="rougemont-button">Submit Your Application</a>
+                </div>
+            </div>
+
+            <!-- ESG & Research Focus -->
+            <div style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: #ffffff; margin-bottom: 3rem; text-align: center;">ESG Integration & Research</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                    <!-- ESG Analysis Team -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                        <h4 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 1.5rem;">ESG Analysis Team</h4>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                            Comprehensive ESG integration strategies implemented across our investment process, with focus on measurable impact outcomes and sustainable development alignment.
+                        </p>
+                        <p style="color: rgba(255,255,255,0.7);">
+                            This year we're also developing enhanced ESG scoring methodologies to support the main fund's sustainable investment mandate and impact measurement.
+                        </p>
+                    </div>
+
+                    <!-- Research Team -->
+                    <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                        <h4 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 1.5rem;">Sustainable Finance Research</h4>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">Research group exploring sustainable finance innovation and impact measurement. Example topics:</p>
+                        <ul style="color: rgba(255,255,255,0.7); padding-left: 1.5rem;">
+                            <li style="margin: 0.5rem 0;">Carbon footprint optimization algorithms</li>
+                            <li style="margin: 0.5rem 0;">Impact measurement across investment types</li>
+                            <li style="margin: 0.5rem 0;">ESG data quality and reliability</li>
+                            <li style="margin: 0.5rem 0;">Sustainable transition modelling</li>
+                        </ul>
+                        <p style="color: rgba(255,255,255,0.7); margin-top: 1.5rem;">Recruiting across both teams.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ready to Contribute -->
+            <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); text-align: center;">
+                <h3 style="color: #ffffff; font-size: 1.8rem; margin-bottom: 1rem;">Ready to Drive Sustainable Impact?</h3>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join a team that combines rigorous investment analysis with meaningful environmental and social impact through sustainable finance.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkeqmsMUB9kzGf60zO8za4J3GghELtLGidlWPsGq6JX1AsCA/viewform?usp=dialog" class="rougemont-button">Apply to Rougemont Capital</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Exeter Sustainable Finance Society</h4>
+                    <p>University of Exeter Business School</p>
+                    <p>Exeter, United Kingdom</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>ob467@exeter.ac.uk</p>
+                    <p>Follow us on social media for updates</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
