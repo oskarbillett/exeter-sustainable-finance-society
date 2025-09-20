@@ -120,7 +120,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 75vh;
+    height: 100vh;
     min-height: 500px;
     background-size: cover;
     background-position: center center;
@@ -136,21 +136,21 @@ nav {
 
 /* Banner-style hero for specific pages */
 .hero.hero-banner {
-    height: 75vh;
-    min-height: 500px;
+    height: 50vh;
+    min-height: 400px;
 }
 
 /* Fix for mobile devices - disable fixed attachment on mobile */
 @media (max-width: 768px) {
     .hero {
         background-attachment: scroll;
-        height: 65vh;
+        height: 70vh;
         min-height: 400px;
     }
     
     .hero.hero-banner {
-        height: 65vh;
-        min-height: 400px;
+        height: 40vh;
+        min-height: 300px;
     }
 }
 
