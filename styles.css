@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #ffffff;
-    background: #0a0e1a;
+    background: #000000;
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 
 /* Navigation */
 nav {
-    background: rgba(10, 14, 26, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -83,7 +83,7 @@ nav {
     top: 80px;
     left: 0;
     width: 100%;
-    background: rgba(10, 14, 26, 0.98);
+    background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0,0,0,0.3);
     z-index: 999;
@@ -245,7 +245,7 @@ nav {
 .page-section {
     min-height: calc(100vh - 160px);
     padding: 120px 0 80px;
-    background: #0a0e1a;
+    background: #000000;
 }
 
 .page-section#about {
